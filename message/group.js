@@ -28,7 +28,7 @@ module.exports = welcome = async (dha, anu) => {
                 pp_grup = 'https://i.postimg.cc/SN54m6LW/SAVE-20210728-133334.jpg'
             }
             if (anu.action == 'add' && mem.includes(dha.user.jid)) {
-            dha.sendMessage(anu.jid, 'Halo! Terima Kasih sudah Mengundangku, Jika ingin Menggunakan Bot Ketik ${prefix}menu', 'conversation')
+            dha.sendMessage(anu.jid, 'Halo! Tidak Terima Kasih sudah Mengundangku, Jika ingin Menggunakan Bot Ketik ${prefix}menu', 'conversation')
             }
              if (anu.action == 'add' && !mem.includes(dha.user.jid)) {
              if (!welkom.includes(anu.jid)) return
@@ -40,7 +40,7 @@ module.exports = welcome = async (dha, anu) => {
                 time_wel = moment.tz('Asia/Jakarta').format("HH:mm")
                 teks = `Welcome ${anu_user}`
 	            buff = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome?nama=${anu_user}&descriminator=${time_wel}&memcount=${memeg}&gcname=${encodeURI(mdata.subject)}&pp=${pp_user}&bg=https://i.postimg.cc/rFkw8MpX/IMG-20210807-151325.jpg`)	            
-                buttons = [{buttonId: `#abcd7373e`,buttonText:{displayText: 'Welcome Kak'},type:1}]
+                buttons = [{buttonId: `#abcd7373e`,buttonText:{displayText: 'Welcome Kontol🌝'},type:1}]
                 imageMsg = (await dha.prepareMessageMedia((buff), 'imageMessage', {thumbnail: buff})).imageMessage
                 buttonsMessage = { contentText: `${teks}`, footerText: `We Are Happy With Your Coming Dont Be Sider`, imageMessage: imageMsg, buttons: buttons, headerType: 4 }
                 prep = await dha.prepareMessageFromContent(mdata.id,{buttonsMessage},{})
@@ -54,9 +54,9 @@ module.exports = welcome = async (dha, anu) => {
                 anu_user = w.vname || w.notify || num.split('@')[0]
                 time_wel = moment.tz('Asia/Jakarta').format("HH:mm")
                 memeg = mdata.participants.length
-                out = `Byee *${anu_user}*\nSemoga kamu bahagia diluar sana`
+                out = `Byee *${anu_user}*\nSemoga kamu Sengsara diluar sana`
                 buff = await getBuffer(`http://hadi-api.herokuapp.com/api/card/goodbye?nama=${anu_user}&descriminator=${time_wel}&memcount=${memeg}&gcname=${encodeURI(mdata.subject)}&pp=${pp_user}&bg=https://i.postimg.cc/rFkw8MpX/IMG-20210807-151325.jpg`)
-                buttons = [{buttonId: `#ab6363c`,buttonText:{displayText: 'Byee Kak 🤙'},type:1}]
+                buttons = [{buttonId: `#ab6363c`,buttonText:{displayText: 'Byee Anjing 🤙'},type:1}]
                 imageMsg = (await dha.prepareMessageMedia((buff), 'imageMessage', {thumbnail: buff})).imageMessage
                 buttonsMessage = { contentText: `${out}`, footerText: 'Nasi Kotak Nya 1 Pedes Ya', imageMessage: imageMsg, buttons: buttons, headerType: 4 }
                 prep = await dha.prepareMessageFromContent(mdata.id,{buttonsMessage},{})
